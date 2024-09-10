@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { BrainCog, Github, Linkedin, Instagram, ArrowUpRight } from 'lucide-react';
+import { BrainCog, Github, Linkedin, Instagram, ArrowUpRight, Layers, AtSign, BrainCircuit } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from 'react';
+import portraitImage from "@/assets/Nikolas_1x1.png"
 
 const animationProps = {
     initial: { opacity: 0, scale: 0.5 },
@@ -36,34 +37,53 @@ export default function Portfolio() {
 
     return (
         <main className="grid grid-cols-3 auto-cols-max gap-4">
-            <div className="grid grid-rows-3 gap-4 col-span-2 h-full ">
-                <div className="grid grid-cols-3 gap-4 row-span-2">
+            <div className="grid grid-rows-5 gap-4 col-span-2 h-full ">
+                <div className="grid grid-cols-3 gap-4 row-span-3">
                     <motion.div
                         {...animationProps}
                         className="bg-primary/70 p-6 rounded-lg text-primary-foreground col-span-2">
-                        <BrainCog width={100} height={100} />
-                        Nikolas
+                        <div className="flex flex-col justify-between h-full py-4 px-4">
+                            <div className="flex-grow flex justify-end">
+                                <BrainCircuit className='w-36 h-36' />
+                            </div>
+                            <div>
+                                <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+                                    Computer Vision and AI
+                                    FullStack Software Developer
+                                </h1>
+                            </div>
+                        </div>
+
                     </motion.div>
                     <motion.div
                         variants={variants}
                         initial="initial"
                         animate={step === 0 || step === 1 ? "" : step === 2 ? "shrink" : "center"}
-                        className="flex h-full w-full items-center justify-cente"
+                        className="flex h-full w-full items-center justify-center"
                     >
                         <img
-                            src="https://avatars.githubusercontent.com/u/118072254?s=400"
+                            src={portraitImage}
                             alt="Portrait of Nikolas Melo's Github"
                             className="w-[450px] h-full rounded-lg object-cover"
                         />
                     </motion.div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 h-full">
+                <div className="grid grid-cols-2 gap-4 h-full row-span-4">
                     <motion.div
                         {...animationProps}
                         className="bg-primary/70 p-6 rounded-lg col-span-1">
-                        <p className="text-sm">
-
-                        </p>
+                        <div className="flex flex-col justify-between h-full py-4 px-4">
+                            <div className="flex-grow flex">
+                                <AtSign className='w-8 h-8' />
+                            </div>
+                            <div>
+                                <p className="text-xl text-muted-foreground text-balance">
+                                    I am a FullStack Developer with practical experience and knowledge in Python applied to Computer Vision and AI,
+                                    as well as Backend systems, such as Django,
+                                    I also have knowledge in Frontend with HTML, CSS, React and Tailwind.
+                                </p>
+                            </div>
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -71,9 +91,9 @@ export default function Portfolio() {
                         {...animationProps}
                     >
                         <div className='flex justify-between items-center'>
-                            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Have some questions?</h4>
+                            <div className="text-lg font-semibold">Have some questions?</div>
                             <Button onClick={handleRefresh} size="icon" >
-                                <ArrowUpRight />
+                                <ArrowUpRight className='w-8 h-8' />
                             </Button>
                         </div>
                         <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">Contact me</h2>
