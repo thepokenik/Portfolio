@@ -3,13 +3,24 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
     const location = useLocation();
     const pathname = location.pathname;
 
     return (
-        <header className="flex bg-primary justify-between items-center mb-8 p-6 rounded-lg">
+        <motion.header
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{
+                duration: 1,
+                delay: 2,
+                ease: [0, 0.7, 0.2, 1]
+            }}
+            style={{ transformOrigin: "center" }}
+            className="flex bg-primary justify-between items-center mb-8 p-6 rounded-lg"
+        >
             <h1 className="text-2xl font-bold text-primary-foreground">NIKOLAS MELO</h1>
             <nav className="items-center hidden space-x-4 md:flex">
                 <ul className="flex space-x-4 text-primary-foreground">
@@ -68,7 +79,7 @@ export default function Navbar() {
                     </nav>
                 </SheetContent>
             </Sheet>
-        </header>
+        </motion.header>
     )
 }
 
