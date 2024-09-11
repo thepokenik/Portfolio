@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="bg-background h-screen flex flex-col p-8">
+    <div className="h-screen flex flex-col p-8">
       <Navbar />
       <div className="flex-grow flex">
         <Portfolio />
