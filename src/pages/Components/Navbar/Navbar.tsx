@@ -21,11 +21,13 @@ export default function Navbar() {
             style={{ transformOrigin: "center" }}
             className="flex bg-primary justify-between items-center mb-8 p-6 rounded-lg"
         >
-            <h1 className="text-2xl font-bold text-primary-foreground">NIKOLAS MELO</h1>
+            <h1 className="text-2xl font-bold text-primary-foreground"><Link to='/'>
+                            NIKOLAS MELO
+                        </Link></h1>
             <nav className="items-center hidden space-x-4 md:flex">
                 <ul className="flex space-x-4 text-primary-foreground">
                     <li>
-                        <Link to='/' className={cn(
+                        <Link to='/projects' className={cn(
                             "font-bold transition-colors hover:text-primary-foreground",
                             pathname.startsWith("/projects") ? "text-primary-foreground" : "text-primary-foreground/70"
                         )}>
