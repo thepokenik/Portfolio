@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BrainCog, Github, Linkedin, Instagram, ArrowUpRight, Layers, AtSign, BrainCircuit } from 'lucide-react';
+import { Github, Linkedin, Instagram, ArrowUpRight, AtSign, BrainCircuit } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from 'react';
 import portraitImage from "@/assets/Nikolas_1x1.png"
